@@ -1,0 +1,45 @@
+Added Component: Designator=DS18B20(HDR1X3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P1(HDR1X4)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=R1(R 0805_L)
+Add component (AddParameter): Name = "BOM名称"; Value = "贴片电阻"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "下单链接"; Value = "https://item.taobao.com/item.htm?ft=t&id=613637044352"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "淘宝ID"; Value = "小糖豆的小窝窝"; VariantName = "[No Variations]"
+Added Component: Designator=stm1(stm32f4x1cxu6_core)
+Added Component: Designator=U1(HT11A)
+Add component (AddParameter): Name = "BOM名称"; Value = "电容式温湿度传感器"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "下单链接"; Value = "https://item.taobao.com/item.htm?ft=t&id=613637044352"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "淘宝ID"; Value = "小糖豆的小窝窝"; VariantName = "[No Variations]"
+Added Component: Designator=串口屏(CKP)
+Added Pin To Net: NetName=+5 Pin=DS18B20-3
+Added Pin To Net: NetName=+5 Pin=P1-1
+Added Pin To Net: NetName=+5 Pin=R1-1
+Added Pin To Net: NetName=+5 Pin=stm1-40
+Added Pin To Net: NetName=+5 Pin=U1-1
+Added Net: Name=+5
+Added Pin To Net: NetName=DQ Pin=R1-2
+Added Pin To Net: NetName=DQ Pin=stm1-14
+Added Pin To Net: NetName=DQ Pin=U1-2
+Added Net: Name=DQ
+Added Pin To Net: NetName=GND Pin=DS18B20-1
+Added Pin To Net: NetName=GND Pin=P1-4
+Added Pin To Net: NetName=GND Pin=stm1-39
+Added Pin To Net: NetName=GND Pin=U1-3
+Added Pin To Net: NetName=GND Pin=U1-4
+Added Net: Name=GND
+Added Pin To Net: NetName=I/O Pin=DS18B20-2
+Added Pin To Net: NetName=I/O Pin=stm1-13
+Added Net: Name=I/O
+Added Pin To Net: NetName=RX Pin=P1-3
+Added Pin To Net: NetName=RX Pin=stm1-7
+Added Net: Name=RX
+Added Pin To Net: NetName=TX Pin=P1-2
+Added Pin To Net: NetName=TX Pin=stm1-6
+Added Net: Name=TX
+Added Class: Name=Sheet1
+Added Room: Name=Sheet1

@@ -1,0 +1,117 @@
+module ledwater1(
+		input clk,//输入端口定义
+		input rst_n,
+		input 		[5:0]key,
+		output reg 	[3:0]led
+		);
+reg [30:0]cnt;
+reg [1:0] led_control;
+reg [4:0] model;
+
+always @(posedge clk or negedge rst_n)begin
+	if(!rst_n)
+		cnt<=24'd9_999_999;  
+	else if (cnt<=24'd9_999_999)
+		cnt<=cnt+1;
+	else
+		cnt<=0;
+end
+
+always @(posedge clk or negedge rst_n)begin    
+		if(!rst_n)
+			led_control<=2'b00;
+		else if(cnt==24'd9_999_999)
+			led_control<=led_control+1'b1;
+		else
+			led_control<=led_control;
+end
+
+always@(posedge clk or negedge rst_n)begin
+		if(!rst_n)begin
+		model<=5'b00000;
+		end
+		
+		
+		
+		else if(key[0]==0)//按键1下，从右向左流水灯
+			model<=5'b00000;
+		else if(key[1]==0)//按键2按下，从左向右流水灯
+			model<=5'b00001;
+		else if(key[2]==0)//按键3按下，led闪烁
+			model<=5'b00010;
+		else if(key[3]==0)//按键4按下，
+			model<=5'b00100;
+		else if(key[4]==0)//按键5按下，
+			model<=5'b01000;
+		else if(key[5]==0)
+			model<=5'b10000;//按键6按下
+			else
+			model<=model; 
+end
+
+
+
+
+
+always @(*)begin
+		if(model==5'b00000)//按键1按下，从右向左流水灯
+		case(led_control)
+					2'b00:led<=4'b1000;
+					2'b01:led<=4'b0100;
+					2'b10:led<=4'b0010;
+					2'b11:led<=4'b0001;
+					default:led<=4'b0000;
+		endcase
+		//
+		else if(model==5'b00001)//按键2按下，从左向右流水灯
+		case(led_control)
+					2'b00:led<=4'b0001;
+					2'b01:led<=4'b0010;
+					2'b10:led<=4'b0100;
+					2'b11:led<=4'b1000;
+					default:led<=4'b0000;
+		endcase
+			//
+		else if(model==5'b00010)//按键3按下，led闪烁
+		case(led_control)
+					2'b00:led<=4'b1111;
+					2'b01:led<=4'b0000;
+					2'b10:led<=4'b1111;
+					2'b11:led<=4'b0000;
+					default:led<=4'b0000;
+		endcase
+		//
+		else if(model==5'b00100)//按键4按下，
+		case(led_control)
+					2'b00:led<=4'b1001;
+					2'b01:led<=4'b0110;
+					2'b10:led<=4'b1001;
+					2'b11:led<=4'b0110;
+					default:led<=4'b0000;
+		endcase
+		//
+		
+		else if(model==5'b01000)//按键5
+		case(led_control)
+					2'b00:led<=4'b1100;
+					2'b01:led<=4'b0011;
+					2'b10:led<=4'b1100;
+					2'b11:led<=4'b0011;
+					default:led<=4'b0000;
+		endcase
+		//
+
+		else if(model==5'b10000)//按键6
+		case(led_control)
+					2'b00:led<=4'b1010;
+					2'b01:led<=4'b0101;
+					2'b10:led<=4'b1010;
+					2'b11:led<=4'b0101;
+					default:led<=4'b0000;
+		endcase
+		else
+		led<=4'b0000;
+		
+
+end
+endmodule
